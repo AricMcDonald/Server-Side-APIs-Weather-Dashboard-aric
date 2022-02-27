@@ -88,13 +88,13 @@ function getWeather(desiredCity) {
                     let renderedWeatherIcon = 'https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png';
                     renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
                     renderSearchHistory(cityObj.cityName);               
-                // }
+            //     }
             // }else{
             //     console.log("city already in searchHistory. not adding to history list")
             //     let renderedWeatherIcon = 'https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png';
             //         renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
             }
-        else
+        else{
             let searchHistoryArr = JSON.parse(localStorage.getItem("searchHistory"));
             if (searchHistoryArr.indexOf(cityObj.cityName) === -1) {
                 searchHistoryArr.push(cityObj.cityName);
@@ -106,7 +106,7 @@ function getWeather(desiredCity) {
                 console.log("City already in search history, Not adding to history list")
                 let renderedWeatherIcon = 'https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png';
                     renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
-            }
+            }}
             function getFiveDayForcast() {
                 cardRow.empty();
                 let queryUrl = 'https://api.openweathermap.org/data/2.5/forcast?q=${desiredCity}&APPID+${apiKey}&units=imperial';
