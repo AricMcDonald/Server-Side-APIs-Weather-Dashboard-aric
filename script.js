@@ -59,14 +59,18 @@ function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, city
 
 }
 function getWeather(desiredCity) {
-    let queryUrl = 'https://api.openweathermap.org/data/2.5/weather?q=${desiredCity}&APPID+${apiKey}&units=imperial';
+    let queryUrl = 
+        "https://api.openweathermap.org/data/2.5/weather?q=${desiredCity}&APPID+${apiKey}&units=imperial";
     $.ajax({
         url: queryUrl,
-        method: "GET"
+        method: "GET",    
+    }).then(function(weatherData) {
+        var temp= document.getElementsByClassName("temp");
+        temp.innerHTML = weatherData.temp
     
     })
-    .then(function(weatherData) {
-        let cityObj = {
+}
+    let cityObj = {
             cityName: weatherData.name,
             cityTemp: weatherData.main.temp,
             cityHumidity: weatherData.main.humidity,
