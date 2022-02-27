@@ -113,21 +113,22 @@ function getWeather(desiredCity) {
                 $.ajax({
                     url: queryUrl,
                     method: "GET"
+                
+                })
                 .then(function(FiveDayResponse){
-                for (let i = 0; i != FiveDayResponse.list.length; i+=8 ) {
-                    let cityObj = {
-                        date: FiveDayResponse.list[i].dt_txt,
-                        icon: FiveDayResponse.list[i].weather[0].icon,
-                        temp: FiveDayResponse.list[i].main.temp,
-                        humidity: FiveDayResponse.list[i].main.humidity
+                    for (let i = 0; i != FiveDayResponse.list.length; i+=8 ) {
+                        let cityObj = {
+                            date: FiveDayResponse.list[i].dt_txt,
+                            icon: FiveDayResponse.list[i].weather[0].icon,
+                            temp: FiveDayResponse.list[i].main.temp,
+                            humidity: FiveDayResponse.list[i].main.humidity
+                        }
+                        let dateStr = cityObj.date;
+                        let trimmedDate = dateStr.substring(0, 10);
+                        let weatherIco = 'https:///openweathermap.org/img/w/${cityObj.Icon}.png';
+                        createForcastCard (trimmedDate, weatherIco, cityObj.temp, cityObj.humidity);
                     }
-                    let dateStr = cityObj.date;
-                    let trimmedDate = dateStr.substring(0, 10);
-                    let weatherIco = 'https:///openweathermap.org/img/w/${cityObj.Icon}.png';
-                    createForcastCard (trimmedDate, weatherIco, cityObj.temp, cityObj.humidity);
-                }
-            })
-        }
+                })
     }
     function createForcastCard(date, icon, temp, humidity){
         let FiveDayCardE1 = $("<div>").attr("class", "five-day-card");
