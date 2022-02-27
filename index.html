@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/80833262c1.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    
+    <header class="header">
+        Weather Dashboard
+    </header>
+    <div class="container">
+        <div class="row">
+            <h1>search for a City:</h1>
+        </div>
+        <div class="row">
+            <imput type="text" class="searchInput" placeholder="StLouis">
+                <button type="submit" class="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </imput>
+        </div>
+        <div class="historyItems"></div>
+    </div>
+    <div class="col-two-container">
+        <div class="forcast">
+            <div class="row">
+                <h1 class="cityName">City Name</h1>
+                <h1 class="currentDate"></h1>
+                <img class="weatherIcon"></img>
+            </div>
+            <div class="row">
+                <p class="temp">Temperature:</p>
+            </div>
+            <div class="row">
+                <p class="humidity">Humidity:</p>
+            </div>
+            <div class="row">
+                <p class="windSpeed">Wind Speed:</p>
+            </div>
+            <div class="row">
+                <p class="uvIndex">Uv Index:</p>
+            </div>
+        </div>
+        <div class="five-day-container">
+            <h1>5-Day Forcast:</h1>
+            <div class="card-row">                
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="./script.js"></script>
+</html>
