@@ -16,20 +16,19 @@
         Weather Dashboard
     </header>
     <div class="container">
+
         <div class="row">
-            <h1>search for a City:</h1>
-        </div>
-        <div class="row">
+            <div class="col-md-2">
+                <h1>search for a City:</h1>
             <input type="text" class="searchInput" placeholder="Phoenix">
                 <button type="submit" class="searchBtn">
                     <i class="fas fa-search"></i>
                 </button>
             </input>
-        </div>
         <div class="historyItems"></div>
-    </div>
-    <div class="col-two-container">
-        <div class="forcast">
+        </div>
+        
+        <div class="forcast col-md-9 col-md-offset-1">
             <div class="row">
                 <h1 class="cityName">City Name</h1>
                 <h1 class="currentDate"></h1>
@@ -48,6 +47,10 @@
                 <p class="uvIndex">Uv Index:</p>
             </div>
         </div>
+    </div>
+    </div>
+    <div class="col-two-container">
+        
         <div class="five-day-container">
             <h1>5-Day Forcast:</h1>
             <div class="card-row">                
